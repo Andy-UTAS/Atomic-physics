@@ -91,6 +91,7 @@ def wavelength_to_rgb(wavelength, gamma=0.8):
     return (R,G,B,A)
         
 ######### Import packages #########
+import math # math for basic mathematical operations
 import pandas as pd # panads for data manipulation
 import numpy as np # numpy for all things mathematical/numerical
 import matplotlib.pyplot as plt # matplotlib.pyplot for plotting
@@ -123,6 +124,8 @@ R = const.R # Molar gas constant
 pi = np.pi # Pi
 
 setplotstyle() # Set the plot style
+savefigflag = False # Set the savefig flag to True, meaning produced figures will be saved. By default, this should be False and it is just here to help streamline content production
 
+print('Atomic.py - the package for atomic physics content for use in KYA323 has been loaded. \n\nCore package versions are as follows:')
 print('Matplotlib', matplotlib.__version__)
 print('NumPy', np.__version__)
