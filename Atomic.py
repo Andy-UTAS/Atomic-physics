@@ -95,7 +95,7 @@ import math # math for basic mathematical operations
 import pandas as pd # panads for data manipulation
 import numpy as np # numpy for all things mathematical/numerical
 import matplotlib.pyplot as plt # matplotlib.pyplot for plotting
-import matplotlib.animation as animation # matplotlib.animation for making animations
+from matplotlib.animation import FuncAnimation # matplotlib.animation for making animations
 from matplotlib import cm, colors, colormaps # cm for colour maps
 from mpl_toolkits.mplot3d import Axes3D  # Axes 3D for 3D plots, where Axes3D import has side effects: it enables using projection='3d' in add_subplot
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes # insert_axes for tweaking/aesthetics, notably colourbar placement
@@ -105,10 +105,11 @@ from IPython.display import HTML
 # import wikitables
 import scipy.constants as const # scipy.constants for physical constants
 import scipy.special as sp # scipy.special for special functions
-# from scipy.optimize import curve_fit # scipy.optimize for curve fitting
+from scipy.optimize import curve_fit # scipy.optimize for curve fitting
 import scipy.integrate as integrate #scipy.integrate for numerical integration
 # from scipy.signal import find_peaks # scipy.signal for peak finding
-from scipy.stats import norm # scpipy.stats for normal distribution
+from scipy.stats import norm, maxwell # scpipy.stats for normal distribution
+import qutip # qutip for quantum calculations
 
 ######### "Global variables" (not actually gloabl variables in the python sense) #########
 a0 = const.physical_constants['Bohr radius'][0] # Bohr radius
@@ -120,11 +121,12 @@ hbar = const.hbar # Reduced Planck constant
 kb = const.k # Boltzmann's constant
 m_e = const.m_e # Mass of the electron
 R = const.R # Molar gas constant
+R_infty = const.physical_constants['Rydberg constant times hc in eV'][0] # Rydberg constant in eV
 
 pi = np.pi # Pi
 
 setplotstyle() # Set the plot style
-savefigflag = False # Set the savefig flag to True, meaning produced figures will be saved. By default, this should be False and it is just here to help streamline content production
+savefigflag = True # Set the savefig flag to True, meaning produced figures will be saved. By default, this should be False and it is just here to help streamline content production
 
 print('Atomic.py - the package for atomic physics content for use in KYA323 has been loaded. \n\nCore package versions are as follows:')
 print('Matplotlib', matplotlib.__version__)
